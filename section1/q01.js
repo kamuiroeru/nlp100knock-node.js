@@ -1,8 +1,5 @@
 let s = "パタトクカシーー"
-let l = []
-for (var i in s){
-	if (i % 2 == 0)
-		l.push(s[i])
-}
-let ans = l.join("")
+let ans = s.split("")
+			.filter( (d, lc) => lc % 2 === 0 )
+			.join("")
 console.log(ans)
