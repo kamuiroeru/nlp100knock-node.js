@@ -1,6 +1,6 @@
-Set.prototype.union = (setB) => {
+Set.prototype.union = function(setB) {
 	let union = new Set(this)
-	for (let d in setB) {
+	for (let d of setB) {
 		union.add(d)
 	}
 	return union
