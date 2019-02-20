@@ -6,6 +6,7 @@ const write = (filename, datastr) => {
 		 (err, result) => {if (err) console.log('error', err)}
 	)
 }
+module.exports.write = write
 
 const split_save = (filename, sep='\t') => {
 	let dict = {}, col
@@ -26,4 +27,6 @@ const split_save = (filename, sep='\t') => {
 	}
 }
 
-split_save(process.argv[2])
+if (typeof require != 'undefined' && require.main==module) {
+	split_save(process.argv[2])
+}
